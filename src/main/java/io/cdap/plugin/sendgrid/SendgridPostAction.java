@@ -16,12 +16,12 @@
 
 package io.cdap.plugin.sendgrid;
 
-import com.sendgrid.Content;
-import com.sendgrid.Email;
-import com.sendgrid.Mail;
 import com.sendgrid.Method;
 import com.sendgrid.Request;
 import com.sendgrid.SendGrid;
+import com.sendgrid.helpers.mail.Mail;
+import com.sendgrid.helpers.mail.objects.Content;
+import com.sendgrid.helpers.mail.objects.Email;
 import io.cdap.cdap.api.annotation.Description;
 import io.cdap.cdap.api.annotation.Macro;
 import io.cdap.cdap.api.annotation.Name;
@@ -32,7 +32,6 @@ import io.cdap.cdap.etl.api.PipelineConfigurer;
 import io.cdap.cdap.etl.api.batch.BatchActionContext;
 import io.cdap.cdap.etl.api.batch.PostAction;
 import io.cdap.plugin.common.batch.action.ConditionConfig;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -100,6 +99,9 @@ public final class SendgridPostAction extends PostAction {
     @Nullable
     private Boolean includeWorkflowToken;
 
+    /**
+     * default constructor.
+     */
     public Config() {
       if (content == null) {
         content = "";
@@ -109,6 +111,9 @@ public final class SendgridPostAction extends PostAction {
       }
     }
 
+    /**
+     * Validates {@link Config} instance.
+     */
     public void validate(FailureCollector collector) {
       if (!containsMacro(FROM)) {
         try {

@@ -1,0 +1,364 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "configuration-groups": [
+    {
+      "label": "Basic",
+      "properties": [
+        {
+          "name": "referenceName",
+          "label": "Reference Name",
+          "widget-type": "textbox"
+        },
+        {
+          "name": "authType",
+          "label": "Authentication type",
+          "widget-type": "radio-group",
+          "widget-attributes": {
+            "layout": "inline",
+            "default": "basic",
+            "options": [
+              {
+                "id": "basic",
+                "label": "Basic"
+              },
+              {
+                "id": "api",
+                "label": "API Key"
+              }
+            ]
+          }
+        },
+        {
+          "name": "sendGridApiKey",
+          "label": "API Key",
+          "widget-type": "securekey-text",
+          "widget-attributes": {
+            "placeholder": "SendGrid API Key"
+          }
+        },
+        {
+          "name": "username",
+          "label": "Username",
+          "widget-type": "textbox"
+        },
+        {
+          "name": "password",
+          "label": "Password",
+          "widget-type": "password"
+        },
+        {
+          "name": "dataSourceTypes",
+          "label": "Data Source Types",
+          "widget-type": "multi-select",
+          "widget-attributes": {
+            "options": [
+              {
+                "id": "MarketingCampaign",
+                "label": "Marketing Campaign Objects"
+              },
+              {
+                "id": "Statistic",
+                "label": "Statistic Objects"
+              },
+              {
+                "id": "suppression",
+                "label": "Suppression Objects"
+              }
+            ],
+            "delimiter": ","
+          }
+        },
+        {
+          "name": "dataSourceMarketing",
+          "label": "Marketing Campaign Objects",
+          "widget-type": "multi-select",
+          "widget-attributes": {
+            "options": [
+              {
+                "id": "Automation",
+                "label": "Automation"
+              },
+              {
+                "id": "Contacts",
+                "label": "Contacts"
+              },
+              {
+                "id": "Segments",
+                "label": "Segments"
+              },
+              {
+                "id": "Senders",
+                "label": "Senders"
+              },
+              {
+                "id": "SingleSends",
+                "label": "Single Sends"
+              }
+            ],
+            "delimiter": ","
+          }
+        },
+        {
+          "name": "dataSourceStats",
+          "label": "Statistic Objects",
+          "widget-type": "multi-select",
+          "widget-attributes": {
+            "options": [
+              {
+                "id": "AdvancedStats",
+                "label": "Advanced Stats"
+              },
+              {
+                "id": "CategoryStats",
+                "label": "Category Stats"
+              },
+              {
+                "id": "GlobalStats",
+                "label": "Global Stats"
+              }
+            ],
+            "delimiter": ","
+          }
+        },
+        {
+          "name": "dataSourceSuppressions",
+          "label": "Suppression Objects",
+          "widget-type": "multi-select",
+          "widget-attributes": {
+            "options": [
+              {
+                "id": "Bounces",
+                "label": "Bounces"
+              },
+              {
+                "id": "GlobalUnsubscribes",
+                "label": "Global Unsubscribes"
+              },
+              {
+                "id": "GroupUnsubscribes",
+                "label": "Group Unsubscribes"
+              }
+            ],
+            "delimiter": ","
+          }
+        },
+        {
+          "name": "dataSourceFields",
+          "label": "Fields",
+          "widget-type": "multi-select",
+          "widget-attributes": {
+            "options": [
+              {
+                "id" : "address",
+                "label": "address"
+              },
+              {
+                "id" : "address_2",
+                "label": "address_2"
+              },
+              {
+                "id" : "city",
+                "label": "city"
+              },
+              {
+                "id" : "contracts_count",
+                "label": "contracts_count"
+              },
+              {
+                "id" : "country",
+                "label": "country"
+              },
+              {
+                "id" : "created",
+                "label": "created"
+              },
+              {
+                "id" : "created_at",
+                "label": "created_at"
+              },
+              {
+                "id" : "date",
+                "label": "date"
+              },
+              {
+                "id" : "description",
+                "label": "description"
+              },
+              {
+                "id" : "email",
+                "label": "email"
+              },
+              {
+                "id" : "first_name",
+                "label": "first_name"
+              },
+              {
+                "id" : "from",
+                "label": "from"
+              },
+              {
+                "id" : "id",
+                "label": "id"
+              },
+              {
+                "id" : "is_abtest",
+                "label": "is_abtest"
+              },
+              {
+                "id" : "is_default",
+                "label": "is_default"
+              },
+              {
+                "id" : "last_email_sent_at",
+                "label": "last_email_sent_at"
+              },
+              {
+                "id" : "last_name",
+                "label": "last_name"
+              },
+              {
+                "id" : "list_ids",
+                "label": "list_ids"
+              },
+              {
+                "id" : "live_at",
+                "label": "live_at"
+              },
+              {
+                "id" : "locked",
+                "label": "locked"
+              },
+              {
+                "id" : "message_count",
+                "label": "message_count"
+              },
+              {
+                "id": "metrics",
+                "label": "metrics"
+              },
+              {
+                "id" : "name",
+                "label": "name"
+              },
+              {
+                "id" : "nickname",
+                "label": "nickname"
+              },
+              {
+                "id" : "parent_list_id",
+                "label": "parent_list_id"
+              },
+              {
+                "id" : "reason",
+                "label": "reason"
+              },
+              {
+                "id" : "reply_to",
+                "label": "reply_to"
+              },
+              {
+                "id" : "sample_updated_at",
+                "label": "sample_updated_at"
+              },
+              {
+                "id" : "state",
+                "label": "state"
+              },
+              {
+                "id" : "stats",
+                "label": "stats"
+              },
+              {
+                "id" : "status",
+                "label": "status"
+              },
+              {
+                "id" : "type",
+                "label": "type"
+              },
+              {
+                "id" : "unsubscribes",
+                "label": "unsubscribes"
+              },
+              {
+                "id" : "updated_at",
+                "label": "updated_at"
+              },
+              {
+                "id" : "verified",
+                "label": "verified"
+              },
+              {
+                "id" : "zip",
+                "label": "zip"
+              }
+            ],
+            "delimiter": ","
+          }
+        }
+      ]
+    },
+    {
+      "label": "Options",
+      "properties": [
+        {
+          "name": "start_date",
+          "label": "Start Date",
+          "widget-type": "textbox",
+          "placeholder": "YYYY-MM-DD"
+        },
+        {
+          "name": "end_date",
+          "label": "End Date",
+          "widget-type": "textbox",
+          "placeholder": "YYYY-MM-DD"
+        },
+        {
+          "name": "statCategories",
+          "label": "Statistic Categories",
+          "widget-type": "textbox",
+          "placeholder": "spam,..."
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "widget-type": "non-editable-schema-editor",
+      "schema": {
+      }
+    }
+  ],
+  "filters": [
+    {
+      "name": "AuthTypeBasicFilter",
+      "condition": {
+        "expression": "authType == 'basic'"
+      },
+      "show": [
+        {
+          "name": "username",
+          "type": "property"
+        },
+        {
+          "name": "password",
+          "type": "property"
+        }
+      ]
+    },
+    {
+      "name": "AuthTypeAPIKeyFilter",
+      "condition": {
+        "expression": "authType == 'api'"
+      },
+      "show": [
+        {
+          "name": "sendGridApiKey",
+          "type": "property"
+        }
+      ]
+    }
+  ]
+}
