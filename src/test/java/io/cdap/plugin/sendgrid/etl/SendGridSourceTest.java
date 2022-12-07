@@ -34,6 +34,7 @@ import io.cdap.cdap.proto.id.ArtifactId;
 import io.cdap.cdap.proto.id.NamespaceId;
 import io.cdap.cdap.test.ApplicationManager;
 import io.cdap.cdap.test.DataSetManager;
+import io.cdap.cdap.test.TestConfiguration;
 import io.cdap.cdap.test.WorkflowManager;
 import io.cdap.plugin.sendgrid.BaseTest;
 import io.cdap.plugin.sendgrid.batch.source.SendGridSource;
@@ -46,6 +47,7 @@ import io.cdap.plugin.sendgrid.common.objects.marketing.MarketingNewContacts;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.ClassRule;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -56,6 +58,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class SendGridSourceTest extends HydratorTestBase {
+  @ClassRule
+  public static final TestConfiguration CONFIG = new TestConfiguration("explore.enabled", false);
+
   private static final ArtifactSummary APP_ARTIFACT = new ArtifactSummary("data-pipeline", "3.2.0");
   private static final String LAST_NAME_FIELD = "last_name";
   private static final String ID_FIELD = "id";
